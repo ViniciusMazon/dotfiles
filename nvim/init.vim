@@ -47,7 +47,7 @@ nnoremap <c-p> :Files<cr>
 " NERDTree maps
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " HotActions map
@@ -124,7 +124,7 @@ let g:sonokai_better_performance = 1
 colorscheme sonokai
 
 " Transparent background
-hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 " RESTORE_VIEW
 "https://github.com/vim-scripts/restore_view.vim/blob/master/plugin/restore_view.vim
