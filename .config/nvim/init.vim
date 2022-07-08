@@ -1,79 +1,7 @@
-set nocompatible            " disable compatibility to old time vi
-set showmatch               " show matching brackets.
-set hidden                  " permite editar sem salvar ao sair do arquivo
-set ignorecase              " case insensitive matching
-set mouse=v                 " middle click paste with mouse
-set hlsearch                " highlight search results
-set autoindent              " indent a new line the same amount as the line just typed
-set number                  " add line numbers
-set relativenumber          " adiciona linhas relativas
-set wildmode=longest,list   " get bash like tab completions
-set cc=120                   " set an 80 column border for good coding style
-filetype plugin indent on   " allows auto indenting depending on file type
-set tabstop=2               " number of columns occupied by a tab character
-set expandtab               " converts tabs to white space
-set shiftwidth=2            " width for auto indents
-set softtabstop=2           " see multiple spaces as tab stops so <BS> does the right thing
-set inccommand=split        " mostra em tempo real as alterações de texto %s/teste/novoTexto/g
-set encoding=UTF-8
-
-" Spellchecker
-" set spell
-" set spelllang=en_us,pt_br
-
-set laststatus=2
-set noshowmode
-
-let g:lightline = {
-  \ 'colorscheme': 'wombat',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead',
-  \ },
-\ }
-
-let mapleader="\<space>"    " leader key
-nnoremap <leader>; A;<esc>
-
-" abre o arquivo de configuraçao
-nnoremap <leader>cf :vsplit ~/.config/nvim/init.vim<cr>  
-
-" abre a busca por aquivos no C+p
-nnoremap <c-p> :Files<cr>
-
-" NERDTree maps
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
-" HotActions map
-nnoremap <C-s> :w<CR>
-nnoremap <C-q> :q<CR>
-inoremap jj <Esc>
-
-" telescope map
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-let g:floaterm_keymap_new    = '<F7>'
-let g:floaterm_keymap_prev   = '<F8>'
-let g:floaterm_keymap_next   = '<F9>'
-let g:floaterm_keymap_toggle = '<F12>'
-
-nnoremap   <silent>   <F7>    :FloatermNew<CR>
-nnoremap   <silent>   <F8>    :FloatermPrev<CR>
-nnoremap   <silent>   <F9>    :FloatermNext<CR>
-nnoremap   <silent>   <F12>   :FloatermToggle<CR>
-
 call plug#begin()
+" Themes
 Plug 'sainnhe/sonokai'
-"Plug 'EdenEast/nightfox.nvim' 
+
 Plug 'terryma/vim-multiple-cursors' " Selecionar multiplas ocorrencias no arquivo com um preview
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -107,24 +35,99 @@ Plug 'romgrk/barbar.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'phaazon/hop.nvim'
 Plug 'mhinz/vim-startify'
-
 call plug#end()
 
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 
-set syntax=o
+set nocompatible            " disable compatibility to old time vi
+set showmatch               " show matching brackets.
+set hidden                  " permite editar sem salvar ao sair do arquivo
+set ignorecase              " case insensitive matching
+set mouse=v                 " middle click paste with mouse
+set hlsearch                " highlight search results
+set autoindent              " indent a new line the same amount as the line just typed
+set number                  " add line numbers
+set relativenumber          " adiciona linhas relativas
+set wildmode=longest,list   " get bash like tab completions
+" set cc=120                   " set an 120 column border for good coding style
+filetype plugin indent on   " allows auto indenting depending on file type
+set tabstop=2               " number of columns occupied by a tab character
+set expandtab               " converts tabs to white space
+set shiftwidth=2           " width for auto indents
+set softtabstop=2           " see multiple spaces as tab stops so <BS> does the right thing
+set inccommand=split        " mostra em tempo real as alterações de texto %s/teste/novoTexto/g
+set encoding=UTF-8
+syntax enable
+set nobackup
+set shell=fish
+set smarttab
+set nowrap 
+
+" Spellchecker
+" set spell
+" set spelllang=en_us,pt_br
+
+set laststatus=2
+set noshowmode
+
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead',
+  \ },
+\ }
+
+let mapleader="\<space>"    " leader key
+nnoremap <leader>; A;<esc>
+
+" abre o arquivo de configuraçao
+nnoremap <leader>cf :vsplit ~/.config/nvim/init.vim<cr>  
+
+" abre a busca por aquivos no C+p
+nnoremap <c-p> :Files<cr>
+
+" NERDTree maps
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" HotActions map
+nnoremap <C-s> :w<CR>
+nnoremap <C-q> :q<CR>
+inoremap jj <Esc>
+
+" telescope map
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
+let g:floaterm_keymap_toggle = '<F12>'
+
+nnoremap   <silent>   <F7>    :FloatermNew<CR>
+nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+nnoremap   <silent>   <F9>    :FloatermNext<CR>
+nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+
+set termguicolors
+set t_8f=^[[38;2;%lu;%lu;%lum
+set t_8b=^[[48;2;%lu;%lu;%lum
 
 "Sonokai theme
-if has('termguicolors')
-  set termguicolors
-endif
-" The configuration options should be placed before `colorscheme sonokai`.
-let g:sonokai_style = 'atlantis'
+let g:sonokai_style = 'andromeda'
 let g:sonokai_better_performance = 1
+let g:sonokai_transparent_background = 1
 colorscheme sonokai
 
 " Transparent background
-hi EndOfBuffer guibg=NONE ctermbg=NONE
+" hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 " RESTORE_VIEW
 "https://github.com/vim-scripts/restore_view.vim/blob/master/plugin/restore_view.vim
