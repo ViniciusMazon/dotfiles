@@ -1,0 +1,8 @@
+         X
+[user]
+  email = vnpmazon@gmail.com
+  name = Vinicius Mazon
+[core]
+  editor = nvim
+[alias]
+  s = !git status -│ l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
