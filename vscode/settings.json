@@ -1,0 +1,66 @@
+{
+    "workbench.startupEditor": "none",
+    "editor.lineNumbers": "relative",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": [
+          "j",
+          "j"
+        ],
+        "after": [
+          "<Esc>"
+        ]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": [
+          "<C-q>"
+        ],
+        "commands": [
+          ":q"
+        ]
+      },
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false
+    },
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": [
+      "#333",
+      "#fff"
+    ],
+    "vim.statusBarColors.insert": [
+      "#59c9a5",
+      "#333"
+    ],
+    "vim.statusBarColors.visual": [
+      "#ffb400",
+      "#333"
+    ],
+    "workbench.colorTheme": "Sonokai Shusia",
+    "vim.surround": true,
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#333",
+      "statusBar.noFolderBackground": "#333",
+      "statusBar.debuggingBackground": "#333",
+      "statusBar.foreground": "#fff",
+      "statusBar.debuggingForeground": "#fff"
+    },
+    "workbench.iconTheme": "vsc-jetbrains-icons-enhanced",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "cSpell.language": "en, pt-BR",
+    "security.workspace.trust.untrustedFiles": "open",
+    "diffEditor.ignoreTrimWhitespace": false
+  }
