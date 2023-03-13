@@ -44,8 +44,8 @@ return packer.startup(function(use)
   }
 
   -- Color schemes
-  -- use 'tanvirtin/monokai.nvim'
-  use { "ellisonleao/gruvbox.nvim" }
+  use 'tanvirtin/monokai.nvim'
+  -- use { "ellisonleao/gruvbox.nvim" }
 
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
@@ -74,6 +74,9 @@ return packer.startup(function(use)
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
+
+  -- buffer
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- Treesitter interface
   use {

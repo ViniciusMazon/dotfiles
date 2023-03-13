@@ -51,4 +51,4 @@ vim.keymap.set('n', '<C-f>', builtin.buffers, {})
 ---------------
 -- Hop 
 ---------------
-map('n', '<leader>f', ':HopWord<CR>')
+map('n', '<leader>h', ':HopWord<CR>')
