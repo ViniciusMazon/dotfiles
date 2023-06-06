@@ -46,6 +46,7 @@ return packer.startup(function(use)
   -- Color schemes
   use 'tanvirtin/monokai.nvim'
   -- use { "ellisonleao/gruvbox.nvim" }
+  -- use {"arcticicestudio/nord-vim"}
 
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
@@ -76,7 +77,6 @@ return packer.startup(function(use)
   }
 
   -- buffer
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- Treesitter interface
   use {
@@ -103,6 +103,68 @@ return packer.startup(function(use)
       require('gitsigns').setup{}
     end
   }
+
+  -- Session
+  use({
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    module = "persistence",
+    config = function()
+      require("persistence").setup()
+    end,
+  })
+
+  -- Formating
+  use {
+    "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
+  require('nvim-treesitter.configs').setup({
+    rainbow = {
+      -- Setting colors
+      colors = {
+        -- Colors here
+      },
+      -- Term colors
+      termcolors = {
+        -- Term colors here
+      },
+    },
+  })
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  -- Terminal
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
+
+  -- Errors
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+      }
+    end
+  }
+
+  -- git
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { 'f-person/git-blame.nvim', requires = 'f-person/git-blame.nvim' }
+
+  -- comments
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+    require('Comment').setup()
+    end
+  }
+
+  -- formatter
+  require('packer').use { 'mhartington/formatter.nvim' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then

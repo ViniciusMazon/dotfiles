@@ -52,3 +52,16 @@ vim.keymap.set('n', '<C-f>', builtin.buffers, {})
 -- Hop 
 ---------------
 map('n', '<leader>h', ':HopWord<CR>')
+
+---------------
+-- Buffer
+---------------
+map('n', '<g-t>', ':bnext<CR>')
+map('n', '<g-T>', ':bprevious<CR>')
+
+---------------
+--  Formatter 
+---------------
+map('n', '<f>', ':Format<CR>')
+map('n', '<F>', ':FormatWrite<CR>')
+
